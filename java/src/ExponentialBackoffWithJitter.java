@@ -28,7 +28,7 @@ public class ExponentialBackoffWithJitter {
 
                 if (attempt > maxTries) {
                     System.out.println("Max retries reached. Giving up.");
-                    throw ex;
+                    return;
                 }
 
                 long delay = calculateJitterDelay(attempt);
